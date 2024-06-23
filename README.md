@@ -10,7 +10,7 @@ A V2board node server based on Xray-core, modified from XrayR
 
 一个基于Xray-core的V2board节点服务端，修改自XrayR，支持V2ay,Trojan,Shadowsocks,Hysteria协议。
 
-本项目为基于原始[V2bX](https://github.com/InazumaV/V2bX)[V2board](https://github.com/wyx2685/v2board)。
+本项目基于原始[V2bX](https://github.com/wyx2685/V2bX)项目修改，用于适配修改版[V2board](https://github.com/wyx2685/v2board)。
 
 ## 项目目录
 
