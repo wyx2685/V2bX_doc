@@ -10,7 +10,7 @@ A V2board node server based on Xray-core, modified from XrayR
 
 一个基于Xray-core的V2board节点服务端，修改自XrayR，支持V2ay,Trojan,Shadowsocks,Hysteria协议。
 
-本项目为基于原始[V2bX](https://github.com/InazumaV/V2bX)。
+本项目为基于原始[V2bX](https://github.com/InazumaV/V2bX)[V2board](https://github.com/wyx2685/v2board)。
 
 ## 项目目录
 
@@ -24,8 +24,8 @@ A V2board node server based on Xray-core, modified from XrayR
 * 支持V2ray，Trojan， Shadowsocks，Hysteria多种协议。
 * 支持Vless和XTLS等新特性。
 * 支持单实例对接多面板、多节点，无需重复启动。
-* 支持限制在线IP
-* 支持节点端口级别、用户级别限速。
+* 支持跨节点限制在线IP
+* 支持节点级别、用户级别限速。
 * 配置简单明了。
 * 修改配置自动重启实例。
 * 方便编译和升级，可以快速更新核心版本， 支持Xray-core，Sing-box，Hysteria新特性。
