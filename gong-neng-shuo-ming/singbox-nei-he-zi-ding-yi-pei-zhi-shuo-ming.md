@@ -2,6 +2,10 @@
 
 V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义的配置文件，实现自定义DNS、路由、入口、出口功能。
 
+{% hint style="info" %}
+远程获取的节点自动生成的inboundTag/outboundTag遵循：ApiHost-NodeType-NodeID的形式。如：https://v2b.v-50.me-hysteria2-11。入/出站tag相同。
+{% endhint %}
+
 ### 自定义配置文件示例
 
 ```json

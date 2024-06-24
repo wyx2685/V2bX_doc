@@ -7,7 +7,7 @@ V2bX完整支持全部的Xray-core所提供的自定义路由功能，具体启�
 3. 如果要启用geoip相关配置，请确保`geoip.dat`和`geosite.dat`处于和`config.yml`同一目录。
 
 {% hint style="info" %}
-远程获取的节点自动生成的inboundTag/outboundTag遵循：NodeType\_Base64(ListenIP)\_Port的形式。如：V2ray\_MTI3LjAuMC4x\_80。入/出站tag相同。
+远程获取的节点自动生成的inboundTag/outboundTag遵循：\[ApiHost\]-NodeType:NodeID的形式。如：\[https://v2b.v-50.me\]-shadowsocks:12。入/出站tag相同。
 {% endhint %}
 
 ### 自定义路由功能示例
