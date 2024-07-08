@@ -8,8 +8,7 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
 
 ### 自定义配置文件示例
 
-```json
-{
+<pre class="language-json"><code class="lang-json">{
   "dns": {
     "servers": [
       {
@@ -28,33 +27,43 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
     {
       "type": "block",
       "tag": "block"
+    },
+    {
+      "type": "wireguard",
+      "tag": "warp",
+<strong>      "server": "engage.cloudflareclient.com",
+</strong>      "server_port": 2408,
+      "local_address": ["172.16.0.2/32"],
+      "private_key": "2DRzSLT1OBh+mN4fxZc+gu+hfYb8X4a9d0oD5NCb60Q=",
+      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+      "reserved": [45, 85, 21],
+      "mtu": 1380
     }
   ],
   "route": {
     "rules": [
       {
-        "outbound": "block",
-        "geoip": [
-          "private"
-        ]
+        "ip_is_private": true,
+        "outbound": "block"
       },
       {
-        "geosite": [
-          "google"
+        "rule_set": [
+          "geosite-google"
         ],
         "outbound": "direct"
       },
       {
-        "geosite": [
-          "cn"
+        "rule_set": [
+          "geosite-category-ads-all"
         ],
         "outbound": "block"
       },
       {
-        "geoip": [
-          "cn"
+        "rule_set": [
+          "geosite-cn",
+          "geoip-cn"
         ],
-        "outbound": "block"
+        "outbound": "warp"
       },
       {
         "domain_regex": [
@@ -89,7 +98,42 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
           "udp","tcp"
         ]
       }
+    ],
+    "rule_set": [
+      {
+        "tag": "geoip-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-cn.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-category-ads-all",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-category-ads-all.srs",
+        "download_detour": "direct"
+      },
+      {
+        "tag": "geosite-google",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-google.srs",
+        "download_detour": "direct"
+      }
     ]
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
   }
 }
-```
+</code></pre>
