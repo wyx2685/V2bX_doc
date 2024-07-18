@@ -189,7 +189,7 @@
 
         // DNS解析提供者的环境变量，详见 https://go-acme.github.io/lego/dns/
         "DNSEnv": {
-          "EnvName": "env1"
+          "CF_DNS_API_TOKEN" = "1234567890abcdefghijklmnopqrstuvwxyz "
         }
       }
     },
