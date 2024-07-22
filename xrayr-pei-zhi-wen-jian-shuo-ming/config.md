@@ -24,7 +24,6 @@
       "Name": "sing1",
       "Log": {
         // 同 SingBox log 部分配置
-
         "Level": "error",
         "Timestamp": true
       },
@@ -65,7 +64,6 @@
       // 本地策略相关配置
       "ConnectionConfig": {
         // 详见 https://xtls.github.io/config/policy.html#levelpolicyobject
-
         "handshake": 4,
         "connIdle": 300,
         "uplinkOnly": 2,
@@ -81,11 +79,9 @@
     }
   ],
   "Nodes": [
-    // Node配置有两种写法
     {
-      // 写法1
       // sing内核
-
+      
       // Node标识名，便于查看日志，不填将通过下发的节点配置自动生成
       // 务必注意不要重复，否则会出现问题
       "Name": "sing_node1",
@@ -131,18 +127,15 @@
       // 可选 prefer_ipv4 / prefer_ipv6 / ipv4_only / ipv6_only
       "DomainStrategy": "ipv4_only",
 
-      // 限制器相关配置
+      // 本地限制器相关配置
       "LimitConfig": {
-        // 开启实时连接数及IP数限制
+        // 开启实时TCP连接数限制
         "EnableRealtime": false,
 
         // 用户速度限制
         "SpeedLimit": 0,
-
-        // 用户IP限制
-        "IPLimit": 0,
-
-        // 用户连接数限制
+ 
+        // 用户TCP连接数限制
         "ConnLimit": 0,
 
         // 开启动态限速
@@ -238,25 +231,6 @@
         "Path": "",
         "Dest": "",
         "ProxyProtocolVer": 0
-      }
-    },
-    {
-      // 写法2
-
-      // 类似旧配置文件 ApiConfig 部分
-      "ApiConfig": {
-        "ApiHost": "http://127.0.0.1",
-        "ApiKey": "test",
-        "NodeID": 33,
-        "Timeout": 30
-      },
-      // 类似旧配置文件 ControllerConfig 部分
-      "Options": {
-        "Core": "sing",
-        "EnableProxyProtocol": true,
-        "EnableTFO": true,
-        "DomainStrategy": "ipv4_only"
-        // More
       }
     },
     {
