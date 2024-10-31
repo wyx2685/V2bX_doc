@@ -132,19 +132,19 @@
       //sing mux相关配置
       "MultiplexConfig": {
         //开启mux
-				"Enable": true,
+	"Enable": true,
         //启用填充
-				"Padding": true,
+	"Padding": true,
         //TCP Brutal 设置
-				"Brutal": {
-          //开启TCP Brutal
-					"Enable": true,
-          //上传带宽
-					"UpMbps": 500,
-          //下载带宽
-					"DownMbps": 500
-			}
-		},
+	"Brutal": {
+        //开启TCP Brutal
+	"Enable": true,
+        //上传带宽
+	"UpMbps": 500,
+        //下载带宽
+	"DownMbps": 500
+	}
+      },
       // 本地限制器相关配置
       "LimitConfig": {
         // 开启实时TCP连接数限制
