@@ -123,10 +123,28 @@
 
       // 开启 DNS
       "EnableDNS" : true,
+      // 关闭嗅探及嗅探覆盖（默认开启）
+      "EnableSniff": false,
+      "SniffOverrideDestination": false,
       // 设置 Domain Strategy 需要开启 DNS ，默认 AsIS
       // 可选 prefer_ipv4 / prefer_ipv6 / ipv4_only / ipv6_only
       "DomainStrategy": "ipv4_only",
-
+      //sing mux相关配置
+      "MultiplexConfig": {
+        //开启mux
+	"Enable": true,
+        //启用填充
+	"Padding": true,
+        //TCP Brutal 设置
+	"Brutal": {
+        //开启TCP Brutal
+	"Enable": true,
+        //上传带宽
+	"UpMbps": 500,
+        //下载带宽
+	"DownMbps": 500
+	}
+      },
       // 本地限制器相关配置
       "LimitConfig": {
         // 开启实时TCP连接数限制
