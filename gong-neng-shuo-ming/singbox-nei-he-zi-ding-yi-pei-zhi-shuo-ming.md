@@ -23,28 +23,33 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
       "tag": "direct",
       "type": "direct",
       "domain_strategy": "prefer_ipv4"
-    },
-    {
-      "type": "block",
-      "tag": "block"
-    },
+    }
+  ],
+  "endpoints": [
     {
       "type": "wireguard",
       "tag": "warp",
-<strong>      "server": "engage.cloudflareclient.com",
-</strong>      "server_port": 2408,
-      "local_address": ["172.16.0.2/32"],
+      "system": false,
+      "name": "warp",
+      "mtu": 1380,
+      "address": ["172.16.0.2/32"],
       "private_key": "2DRzSLT1OBh+mN4fxZc+gu+hfYb8X4a9d0oD5NCb60Q=",
-      "peer_public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
-      "reserved": [45, 85, 21],
-      "mtu": 1380
+      "peers": [
+         {
+           "address": "engage.cloudflareclient.com",
+           "port": 2408,
+           "public_key": "bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+           "allowed_ips": ["0.0.0.0/0"],
+           "reserved": [45,85,21]
+          }
+       ]
     }
   ],
   "route": {
     "rules": [
       {
         "ip_is_private": true,
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "rule_set": [
@@ -56,7 +61,7 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
         "rule_set": [
           "geosite-category-ads-all"
         ],
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "rule_set": [
@@ -90,7 +95,7 @@ V2bX在使用Singbox内核时，读取由`OriginalPath`路径指定的自定义�
             "(.*.||)(laomoe|jiyou|ssss|lolicp|vv1234|0z|4321q|868123|ksweb|mm126).(com|cloud|fun|cn|gs|xyz|cc)",
             "(flows|miaoko).(pages).(dev)"
         ],
-        "outbound": "block"
+        "action": "reject"
       },
       {
         "outbound": "direct",
