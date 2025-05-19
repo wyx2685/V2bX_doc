@@ -239,16 +239,16 @@
 			// 开启回落
 			"EnableFallback": false,
 
-			// 回落相关配置
-			"FallBackConfigs": {
-				// 详见 https://xtls.github.io/config/features/fallback.html#fallbackobject
-
-				"SNI": "",
-				"Alpn": "",
-				"Path": "",
-				"Dest": "",
-				"ProxyProtocolVer": 0
-			}
+			// 回落相关配置 详见 https://xtls.github.io/config/features/fallback.html#fallbackobject
+			"FallBackConfigs": [
+				{
+					"SNI": "",
+					"Alpn": "",
+					"Path": "",
+					"Dest": "",
+					"ProxyProtocolVer": 0
+				}
+			]
 		},
 		{
 			// 引用本地其他配置文件
