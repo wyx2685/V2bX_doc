@@ -146,19 +146,13 @@
 			},
 			// 本地限制器相关配置
 			"LimitConfig": {
-				// 开启实时TCP连接数限制
-				"EnableRealtime": false,
-
 				// 用户速度限制
 				"SpeedLimit": 0,
 
-				// 用户TCP连接数限制
-				"ConnLimit": 0,
-
-				// 开启动态限速
+				// 开启动态限速(暂不可用)
 				"EnableDynamicSpeedLimit": false,
 
-				// 动态限速相关配置
+				// 动态限速相关配置(暂不可用)
 				"DynamicSpeedLimitConfig": {
 					// 检查周期
 					"Periodic": 60,
