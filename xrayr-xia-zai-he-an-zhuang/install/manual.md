@@ -7,14 +7,14 @@
 
 ## 编译并使用
 
-1. 配置go 1.22.0环境
+1. 配置go 1.24.0+环境
 2.  依次运行
 
     ```bash
     git clone https://github.com/wyx2685/V2bX
     cd V2bX
     go mod tidy
-    go build -v -o ./V2bX -tags "sing hysteria2 with_reality_server with_quic with_grpc with_utls with_wireguard with_acme" -trimpath -ldflags "-s -w -buildid="
+    go build -v -o ./V2bX -tags "xray sing hysteria2 with_quic with_grpc with_utls with_wireguard with_acme" -trimpath -ldflags "-s -w -buildid="
     ./V2bX server -c config.json
     ```
 

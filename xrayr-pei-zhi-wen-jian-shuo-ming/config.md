@@ -7,6 +7,7 @@
 
 配置文件基本格式，Cores下可以同时添加多个内核，Nodes下可以同时添加多个面板，多个节点配置信息，只需添加相同格式的Nodes item即可。
 
+{% code fullWidth="false" %}
 ```json
 {
 	"Log": {
@@ -35,9 +36,7 @@
 				"ServerPort": 0
 			},
 			// SingBox源配置文件目录，用于引用标准SingBox配置文件
-			"OriginalPath": "/etc/V2bX/sing_origin.json",
-			// 在删除用户时清理已建立的连接
-			"EnableConnClear": false,
+			"OriginalPath": "/etc/V2bX/sing_origin.json"
 		},
 		{
 			"Type": "sing",
@@ -120,14 +119,6 @@
 			// 开启 TCP Fast Open
 			"EnableTFO": true,
 
-			// 开启 DNS
-			"EnableDNS": true,
-			// 关闭嗅探及嗅探覆盖（默认开启）
-			"EnableSniff": false,
-			"SniffOverrideDestination": false,
-			// 设置 Domain Strategy 需要开启 DNS ，默认 AsIS
-			// 可选 prefer_ipv4 / prefer_ipv6 / ipv4_only / ipv6_only
-			"DomainStrategy": "ipv4_only",
 			//sing mux相关配置
 			"MultiplexConfig": {
 				//开启mux
@@ -193,7 +184,7 @@
 
 				// DNS解析提供者的环境变量，详见 https://go-acme.github.io/lego/dns/
 				"DNSEnv": {
-					"CF_DNS_API_TOKEN" = "1234567890abcdefghijklmnopqrstuvwxyz "
+					"CF_DNS_API_TOKEN" = "1234567890abcdefghijklmnopqrstuvwxyz"
 				}
 			}
 		},
@@ -255,3 +246,4 @@
 	]
 }
 ```
+{% endcode %}
